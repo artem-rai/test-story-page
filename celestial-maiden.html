@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дух Небесная дева | Японские сказки</title>
+    <style>
+        /* Общие стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0d0d2b 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            color: #e8dcc8;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: linear-gradient(180deg, rgba(30, 20, 50, 0.95), rgba(10, 10, 30, 0.98));
+            border: 2px solid #8a7a5a;
+            border-radius: 24px;
+            padding: 40px 35px;
+            box-shadow: 0 0 60px rgba(200, 180, 100, 0.1), inset 0 0 60px rgba(100, 80, 50, 0.05);
+            position: relative;
+            margin: 20px 0;
+        }
+
+        /* Декоративные элементы */
+        .container::before {
+            content: '◆';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #c9b382;
+            background: #1a1a3e;
+            padding: 0 15px;
+        }
+
+        .container::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8a7a5a, transparent);
+            opacity: 0.3;
+        }
+
+        /* Шапка с иероглифом */
+        .header-icon {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 5px;
+            letter-spacing: 10px;
+            color: #c9b382;
+            opacity: 0.6;
+        }
+
+        /* Заголовки */
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: normal;
+            letter-spacing: 6px;
+            color: #f0e6c8;
+            margin-bottom: 8px;
+            text-shadow: 0 0 30px rgba(200, 180, 100, 0.15);
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: #8a7a5a;
+            letter-spacing: 8px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8a7a5a, transparent);
+            margin: 25px 0;
+            opacity: 0.4;
+        }
+
+        /* Текст рассказа */
+        .story-text {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #ddd0bc;
+            text-align: justify;
+            text-indent: 30px;
+        }
+
+        .story-text p {
+            margin-bottom: 18px;
+        }
+
+        .story-text p:first-of-type {
+            text-indent: 0;
+        }
+
+        /* Блок с характеристиками духа (для карточки) */
+        .spirit-card {
+            background: rgba(200, 180, 150, 0.05);
+            border: 1px solid rgba(138, 122, 90, 0.3);
+            border-radius: 16px;
+            padding: 25px 30px;
+            margin: 30px 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 30px;
+        }
+
+        .spirit-card .label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #8a7a5a;
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .spirit-card .stat {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(138, 122, 90, 0.15);
+            padding: 6px 0;
+            font-size: 15px;
+        }
+
+        .spirit-card .stat span:first-child {
+            color: #a0907a;
+        }
+
+        .spirit-card .stat span:last-child {
+            color: #f0e6c8;
+            font-weight: bold;
+        }
+
+        /* Ссылка возврата */
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(138, 122, 90, 0.2);
+        }
+
+        .back-link a {
+            color: #8a7a5a;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 3px;
+            transition: color 0.3s;
+        }
+
+        .back-link a:hover {
+            color: #c9b382;
+        }
+
+        /* Адаптивность для телефона */
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px 18px;
+            }
+
+            h1 {
+                font-size: 24px;
+                letter-spacing: 3px;
+            }
+
+            .story-text {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+
+            .spirit-card {
+                grid-template-columns: 1fr;
+                padding: 18px 20px;
+            }
+
+            .subtitle {
+                font-size: 11px;
+                letter-spacing: 4px;
+            }
+
+            .header-icon {
+                font-size: 32px;
+            }
+        }
+
+        /* Анимация появления */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            animation: fadeIn 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Иероглиф "Небо" -->
+    <div class="header-icon">天</div>
+
+    <h1>Небесная дева</h1>
+    <div class="subtitle">〜 天女 〜</div>
+
+    <hr class="divider">
+
+    <!-- Сам рассказ -->
+    <div class="story-text">
+
+        <p>В одной деревне жил молодой крестьянин по имени Микэран. Каждый день он трудился в поле и рубил дрова в горах.</p>
+
+        <p>Однажды он отправился в горы вместе с односельчанами. Пока они отдыхали и пили воду из горной речки, Микэран решил искупаться отдельно и пошёл к верховью реки, куда люди обычно не заходили. Там была широкая чистая заводь.</p>
+
+        <p>Сбросив одежду, он уже собирался нырнуть, как вдруг заметил на ветке прибрежной сосны прекрасную одежду из птичьих перьев. «Вот диво!» — подумал Микэран и снял одежду с ветки.</p>
+
+        <p>В тот же миг из глубины заводи выплыла обнажённая девушка и стала умолять его жалобным голосом:</p>
+
+        <p>— Верни мне мою одежду из перьев. Ведь для человека она бесполезна.</p>
+
+        <p>Но Микэран молча смотрел на неё. Тогда девушка призналась:</p>
+
+        <p>— Я небесная фея и лишь изредка спускаюсь на землю, чтобы искупаться в этой заводи. Если я не надену этой одежды, то не смогу вернуться на небо.</p>
+
+        <p>Микэран же предложил ей остаться и жить с ним на земле в любви и дружбе. Небесная дева молила его вернуть одежду, но он отказался, боясь, что она улетит.</p>
+
+        <p>Опечаленная, но не имея возможности вернуться на небо, небесная фея поневоле пошла с Микэраном в его селение.</p>
+
+        <p>Прошло семь лет, у них родилось трое детей. Но жена всё это время тосковала по небу и искала свою одежду из перьев, которую муж где-то спрятал.</p>
+
+        <p>Однажды Микэран ушёл на рыбалку, а небесная фея пошла к речке по воду. Когда она возвращалась, то услышала колыбельную песню, которую пел её пятилетний сын, укачивая младенца. В песне говорилось о том, что отец скоро вернётся и найдёт одежду из перьев в высоком амбаре на четырёх и шести столбах.</p>
+
+        <p>Небесная фея поспешила в амбар, отыскала свою чудесную одежду, надела её, привязала к спине семилетнего сына, пятилетнего положила за пазуху, а младенца прижала к груди — и взмыла в небо. Но, пролетая между облаками, она уронила младенца, и он упал на землю.</p>
+
+        <p>Вернувшись, Микэран увидел пустой дом и открытую дверь амбара. У очага он нашёл в бамбуковой дудке письмо от жены. В нём она велела ему собрать по тысяче деревянных и соломенных сандалий, закопать их в землю и посадить бамбук. Когда бамбук дорастёт до неба, Микэран сможет взобраться по нему к ней.</p>
+
+        <p>Микэрану удалось собрать только 999 пар каждого вида. Он закопал их и посадил бамбук. Через три года бамбук вырос почти до самого неба, и Микэран начал взбираться по нему. Но ветви на вершине не доставали до неба совсем чуть-чуть, и он повис, уцепившись за верхнюю ветку.</p>
+
+        <p>Небесная фея, заметив его, спустила ткацкий челнок, за который Микэран ухватился, и она втащила его на небо.</p>
+
+        <p>Мать небесной девы приняла Микэрана ласково, но отец — Небесный правитель — встретил зятя со злобой и стал давать ему невыполнимые задания. Однако жена каждый раз помогала мужу, и он справлялся. Но однажды Небесный правитель задал ему коварную задачу: разрезать три огромные тыквы. Жена знаками пыталась предупредить мужа, что нужно резать поперёк, но было поздно. Микэран разрезал тыквы вдоль, и из них хлынули воды, которые унесли его прочь. Небесная дева долго молила отца вернуть ей мужа, и он смилостивился, дозволив им видеться лишь один раз в году.</p>
+
+        <p>С тех пор на небе видна серебряная Небесная река, которая разделяет Микэрана и Небесную деву. На её берегах сияют две звезды — Пастух и Ткачиха.</p>
+
+    </div>
+
+    <hr class="divider">
+
+    <!-- Блок характеристик для карточной игры -->
+    <div class="spirit-card">
+        <div class="label">✦ Характеристики духа ✦</div>
+
+        <div class="stat">
+            <span>Имя</span>
+            <span>Небесная дева (Тэннё)</span>
+        </div>
+        <div class="stat">
+            <span>Тип</span>
+            <span>Небесный дух</span>
+        </div>
+        <div class="stat">
+            <span>Сила</span>
+            <span>★★★★☆</span>
+        </div>
+        <div class="stat">
+            <span>Магия</span>
+            <span>★★★★★</span>
+        </div>
+        <div class="stat">
+            <span>Хитрость</span>
+            <span>★★★☆☆</span>
+        </div>
+        <div class="stat">
+            <span>Артефакт</span>
+            <span>Одежда из перьев</span>
+        </div>
+        <div class="stat">
+            <span>Слабость</span>
+            <span>Привязанность к земному миру</span>
+        </div>
+    </div>
+
+    <!-- Ссылка назад (можно заменить на главную страницу) -->
+    <div class="back-link">
+        <a href="index.html">← Вернуться к списку духов</a>
+    </div>
+
+</div>
+
+</body>
+</html>
