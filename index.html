@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дух Небесная дева | Японские сказки</title>
+    <title>Небесная дева | Японские сказки</title>
     <style>
         /* Общие стили */
         * {
@@ -23,12 +23,12 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1000px;  /* Было 800px — стало шире */
             width: 100%;
             background: linear-gradient(180deg, rgba(30, 20, 50, 0.95), rgba(10, 10, 30, 0.98));
             border: 2px solid #8a7a5a;
             border-radius: 24px;
-            padding: 40px 35px;
+            padding: 50px 50px;  /* Было 40px 35px — больше воздуха по краям */
             box-shadow: 0 0 60px rgba(200, 180, 100, 0.1), inset 0 0 60px rgba(100, 80, 50, 0.05);
             position: relative;
             margin: 20px 0;
@@ -51,8 +51,8 @@
             content: '';
             position: absolute;
             top: 20px;
-            left: 20px;
-            right: 20px;
+            left: 30px;
+            right: 30px;
             height: 1px;
             background: linear-gradient(90deg, transparent, #8a7a5a, transparent);
             opacity: 0.3;
@@ -61,7 +61,7 @@
         /* Шапка с иероглифом */
         .header-icon {
             text-align: center;
-            font-size: 48px;
+            font-size: 56px;  /* Чуть крупнее */
             margin-bottom: 5px;
             letter-spacing: 10px;
             color: #c9b382;
@@ -71,9 +71,9 @@
         /* Заголовки */
         h1 {
             text-align: center;
-            font-size: 32px;
+            font-size: 36px;  /* Было 32px */
             font-weight: normal;
-            letter-spacing: 6px;
+            letter-spacing: 8px;  /* Было 6px */
             color: #f0e6c8;
             margin-bottom: 8px;
             text-shadow: 0 0 30px rgba(200, 180, 100, 0.15);
@@ -81,10 +81,10 @@
 
         .subtitle {
             text-align: center;
-            font-size: 14px;
+            font-size: 16px;  /* Было 14px */
             color: #8a7a5a;
-            letter-spacing: 8px;
-            margin-bottom: 30px;
+            letter-spacing: 10px;  /* Было 8px */
+            margin-bottom: 35px;  /* Было 30px */
             font-style: italic;
         }
 
@@ -92,115 +92,51 @@
             border: none;
             height: 1px;
             background: linear-gradient(90deg, transparent, #8a7a5a, transparent);
-            margin: 25px 0;
+            margin: 30px 0;  /* Было 25px */
             opacity: 0.4;
         }
 
         /* Текст рассказа */
         .story-text {
-            font-size: 17px;
-            line-height: 1.9;
+            font-size: 19px;  /* Было 17px — текст крупнее */
+            line-height: 2;  /* Было 1.9 — чуть больше воздуха между строк */
             color: #ddd0bc;
             text-align: justify;
-            text-indent: 30px;
+            text-indent: 35px;  /* Было 30px */
         }
 
         .story-text p {
-            margin-bottom: 18px;
+            margin-bottom: 20px;  /* Было 18px */
         }
 
         .story-text p:first-of-type {
             text-indent: 0;
         }
 
-        /* Блок с характеристиками духа (для карточки) */
-        .spirit-card {
-            background: rgba(200, 180, 150, 0.05);
-            border: 1px solid rgba(138, 122, 90, 0.3);
-            border-radius: 16px;
-            padding: 25px 30px;
-            margin: 30px 0 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px 30px;
-        }
-
-        .spirit-card .label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #8a7a5a;
-            grid-column: 1 / -1;
-            text-align: center;
-            margin-bottom: 5px;
-        }
-
-        .spirit-card .stat {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid rgba(138, 122, 90, 0.15);
-            padding: 6px 0;
-            font-size: 15px;
-        }
-
-        .spirit-card .stat span:first-child {
-            color: #a0907a;
-        }
-
-        .spirit-card .stat span:last-child {
-            color: #f0e6c8;
-            font-weight: bold;
-        }
-
-        /* Ссылка возврата */
-        .back-link {
-            display: block;
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(138, 122, 90, 0.2);
-        }
-
-        .back-link a {
-            color: #8a7a5a;
-            text-decoration: none;
-            font-size: 14px;
-            letter-spacing: 3px;
-            transition: color 0.3s;
-        }
-
-        .back-link a:hover {
-            color: #c9b382;
-        }
-
         /* Адаптивность для телефона */
         @media (max-width: 600px) {
             .container {
                 padding: 25px 18px;
+                max-width: 100%;
             }
 
             h1 {
-                font-size: 24px;
-                letter-spacing: 3px;
-            }
-
-            .story-text {
-                font-size: 15px;
-                line-height: 1.8;
-            }
-
-            .spirit-card {
-                grid-template-columns: 1fr;
-                padding: 18px 20px;
-            }
-
-            .subtitle {
-                font-size: 11px;
+                font-size: 26px;  /* Было 24px */
                 letter-spacing: 4px;
             }
 
+            .story-text {
+                font-size: 16px;  /* Было 15px */
+                line-height: 1.9;
+            }
+
+            .subtitle {
+                font-size: 12px;
+                letter-spacing: 5px;
+            }
+
             .header-icon {
-                font-size: 32px;
+                font-size: 38px;
             }
         }
 
@@ -270,47 +206,6 @@
 
         <p>С тех пор на небе видна серебряная Небесная река, которая разделяет Микэрана и Небесную деву. На её берегах сияют две звезды — Пастух и Ткачиха.</p>
 
-    </div>
-
-    <hr class="divider">
-
-    <!-- Блок характеристик для карточной игры -->
-    <div class="spirit-card">
-        <div class="label">✦ Характеристики духа ✦</div>
-
-        <div class="stat">
-            <span>Имя</span>
-            <span>Небесная дева (Тэннё)</span>
-        </div>
-        <div class="stat">
-            <span>Тип</span>
-            <span>Небесный дух</span>
-        </div>
-        <div class="stat">
-            <span>Сила</span>
-            <span>★★★★☆</span>
-        </div>
-        <div class="stat">
-            <span>Магия</span>
-            <span>★★★★★</span>
-        </div>
-        <div class="stat">
-            <span>Хитрость</span>
-            <span>★★★☆☆</span>
-        </div>
-        <div class="stat">
-            <span>Артефакт</span>
-            <span>Одежда из перьев</span>
-        </div>
-        <div class="stat">
-            <span>Слабость</span>
-            <span>Привязанность к земному миру</span>
-        </div>
-    </div>
-
-    <!-- Ссылка назад (можно заменить на главную страницу) -->
-    <div class="back-link">
-        <a href="index.html">← Вернуться к списку духов</a>
     </div>
 
 </div>
