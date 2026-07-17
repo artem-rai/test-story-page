@@ -1,0 +1,225 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #0d0d2b 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: #e8dcc8;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(30, 20, 50, 0.95), rgba(10, 10, 30, 0.98));
+    border: 2px solid #8a7a5a;
+    border-radius: 24px;
+    padding: 50px 50px;
+    box-shadow: 0 0 60px rgba(200, 180, 100, 0.1), inset 0 0 60px rgba(100, 80, 50, 0.05);
+    position: relative;
+    margin: 20px 0;
+    /* ✨ Анимированный перелив по бордеру */
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    background-image: linear-gradient(180deg, rgba(30, 20, 50, 0.95), rgba(10, 10, 30, 0.98)),
+    linear-gradient(90deg, #8a7a5a, #c9b382, #f0e6c8, #c9b382, #8a7a5a);
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+    animation: borderGlow 4s ease-in-out infinite alternate;
+}
+
+/* ✨ Анимация перелива по бордеру */
+@keyframes borderGlow {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(200, 180, 100, 0.2));
+        background-image: linear-gradient(180deg, rgba(30, 20, 50, 0.95), rgba(10, 10, 30, 0.98)),
+        linear-gradient(90deg, #8a7a5a, #c9b382, #f0e6c8, #c9b382, #8a7a5a);
+    }
+    25% {
+        filter: drop-shadow(0 0 20px rgba(200, 180, 100, 0.4));
+        background-image: linear-gradient(180deg, rgba(30, 20, 50, 0.95), rgba(10, 10, 30, 0.98)),
+        linear-gradient(90deg, #c9b382, #f0e6c8, #e8dcc8, #f0e6c8, #c9b382);
+    }
+    50% {
+        filter: drop-shadow(0 0 25px rgba(200, 180, 100, 0.5));
+        background-image: linear-gradient(180deg, rgba(30, 20, 50, 0.95), rgba(10, 10, 30, 0.98)),
+        linear-gradient(90deg, #f0e6c8, #c9b382, #8a7a5a, #c9b382, #f0e6c8);
+    }
+    75% {
+        filter: drop-shadow(0 0 20px rgba(200, 180, 100, 0.4));
+        background-image: linear-gradient(180deg, rgba(30, 20, 50, 0.95), rgba(10, 10, 30, 0.98)),
+        linear-gradient(90deg, #c9b382, #e8dcc8, #f0e6c8, #e8dcc8, #c9b382);
+    }
+    100% {
+        filter: drop-shadow(0 0 10px rgba(200, 180, 100, 0.2));
+        background-image: linear-gradient(180deg, rgba(30, 20, 50, 0.95), rgba(10, 10, 30, 0.98)),
+        linear-gradient(90deg, #8a7a5a, #c9b382, #f0e6c8, #c9b382, #8a7a5a);
+    }
+}
+
+/* Декоративные элементы */
+.container::before {
+    content: '◆';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #c9b382;
+    background: #1a1a3e;
+    padding: 0 15px;
+    z-index: 1;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    right: 30px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #8a7a5a, transparent);
+    opacity: 0.3;
+}
+
+/* Шапка с иероглифом */
+.header-icon {
+    text-align: center;
+    font-size: 56px;
+    margin-bottom: 5px;
+    letter-spacing: 10px;
+    color: #c9b382;
+    opacity: 0.6;
+}
+
+/* Заголовки */
+h1 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: normal;
+    letter-spacing: 8px;
+    color: #f0e6c8;
+    margin-bottom: 8px;
+    text-shadow: 0 0 30px rgba(200, 180, 100, 0.15);
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: #8a7a5a;
+    letter-spacing: 10px;
+    margin-bottom: 35px;
+    font-style: italic;
+}
+
+.divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #8a7a5a, transparent);
+    margin: 30px 0;
+    opacity: 0.4;
+}
+
+/* Картинка */
+.story-image {
+    text-align: center;
+    margin: 20px 0 30px;
+    overflow: hidden; /* Обрезает всё, что вылезает */
+    border-radius: 16px; /* Сглаживает углы */
+}
+
+.story-image img {
+    max-width: 100%; /* Никогда не шире родителя */
+    height: auto; /* Сохраняет пропорции */
+    max-height: 500px; /* Ограничивает высоту */
+    border-radius: 16px;
+    border: 2px solid rgba(138, 122, 90, 0.3);
+    box-shadow: 0 0 40px rgba(200, 180, 100, 0.1);
+    display: block; /* Убирает лишний отступ снизу */
+    margin: 0 auto; /* Центрирует по горизонтали */
+}
+
+.story-image .caption {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #8a7a5a;
+    font-style: italic;
+    letter-spacing: 2px;
+    text-align: center; /* Подпись по центру */
+}
+
+/* Текст рассказа */
+.story-text {
+    font-size: 19px;
+    line-height: 2;
+    color: #ddd0bc;
+    text-align: justify;
+    text-indent: 35px;
+}
+
+.story-text p {
+    margin-bottom: 20px;
+}
+
+.story-text p:first-of-type {
+    text-indent: 0;
+}
+
+/* Адаптивность для телефона */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px 18px;
+    }
+
+    h1 {
+        font-size: 26px;
+        letter-spacing: 4px;
+    }
+
+    .story-text {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .subtitle {
+        font-size: 12px;
+        letter-spacing: 5px;
+    }
+
+    .header-icon {
+        font-size: 38px;
+    }
+
+    .story-image img {
+        max-height: 300px; /* На телефонах картинка меньше */
+        border-radius: 12px;
+    }
+
+    .story-image {
+        margin: 10px -10px 20px; /* Небольшой отступ для краёв */
+        border-radius: 12px;
+    }
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.8s ease-out;
+}
