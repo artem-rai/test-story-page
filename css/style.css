@@ -19,64 +19,13 @@ body {
     max-width: 1000px;
     width: 100%;
     background: linear-gradient(180deg, rgba(30, 20, 50, 0.95), rgba(10, 10, 30, 0.98));
+    border: 2px solid #8a7a5a;
     border-radius: 24px;
     padding: 50px 50px;
     box-shadow: 0 0 60px rgba(200, 180, 100, 0.1), inset 0 0 60px rgba(100, 80, 50, 0.05);
     position: relative;
     margin: 20px 0;
-    z-index: 0;
-}
-
-/* Кольцо свечения вокруг контейнера */
-.container::before {
-    content: '';
-    position: absolute;
-    inset: -3px;
-    border-radius: 26px;
-    background: conic-gradient(
-            from 0deg,
-            #8a7a5a,
-            #c9b382,
-            #f0e6c8,
-            #c9b382,
-            #8a7a5a,
-            #c9b382,
-            #f0e6c8,
-            #c9b382,
-            #8a7a5a
-    );
-    z-index: -1;
-    animation: borderGlow 4s linear infinite;
-    filter: blur(2px);
-    opacity: 0.8;
-}
-
-/* Затемнение, чтобы не перебивало контент */
-.container::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 24px;
-    background: linear-gradient(180deg, rgba(30, 20, 50, 0.95), rgba(10, 10, 30, 0.98));
-    z-index: -1;
-}
-
-/* ✨ Анимация перелива */
-@keyframes borderGlow {
-    0% {
-        transform: rotate(0deg);
-        filter: blur(2px);
-        opacity: 0.6;
-    }
-    50% {
-        filter: blur(4px);
-        opacity: 1;
-    }
-    100% {
-        transform: rotate(360deg);
-        filter: blur(2px);
-        opacity: 0.6;
-    }
+    animation: fadeIn 0.8s ease-out;
 }
 
 /* Декоративные элементы */
@@ -93,7 +42,6 @@ body {
 }
 
 .container .line {
-    content: '';
     position: absolute;
     top: 20px;
     left: 30px;
@@ -233,8 +181,4 @@ h1 {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.container {
-    animation: fadeIn 0.8s ease-out;
 }
